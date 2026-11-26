@@ -113,6 +113,15 @@ export async function updateProfile(data) {
     }
 };
 
+export async function updatePassword(newPassword) {
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+
+    if (error) {
+        console.error('Error al cambiar la contraseña:', error);
+        throw new Error(error.message);
+    }
+}
+
 export async function updateAvatarUrl(file) {
     try {
         const path = `${userData.id}/${crypto.randomUUID()}`;
@@ -130,6 +139,9 @@ export async function updateAvatarUrl(file) {
 export function subscribeToAuthState(callback) {
     observers.push(callback);
     notify(callback);
+    return () => {
+        observers = observers.filter(observer => observer !== callback);
+    };
 };
 
 function notify(callback) {

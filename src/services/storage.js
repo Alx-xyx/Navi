@@ -17,3 +17,21 @@ export function getPublicUrl(filename, bucket = 'avatars') {
         .getPublicUrl(filename);
     return data.publicUrl;
 }
+
+export async function deleteFile(filename, bucket = 'avatars') {
+    const { error } = await supabase.storage
+        .from(bucket)
+        .remove([filename]);
+    if (error) {
+        console.error('Error al borrar archivo:', error);
+        throw new Error(error.message);
+    }
+}
+
+export function getPathFromPublicUrl(url, bucket = 'avatars') {
+    if (!url) return null;
+    const marker = `/object/public/${bucket}/`;
+    const index = url.indexOf(marker);
+    if (index === -1) return null;
+    return decodeURIComponent(url.slice(index + marker.length));
+}

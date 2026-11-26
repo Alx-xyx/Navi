@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
 import TitleH1 from '../components/TitleH1.vue';
 import { getUserById } from '../services/userProfiles.js';
+import PostsFeed from '../components/PostsComponents/PostsFeed.vue';
 
 //&& ---------- ROUTER ---------- &/
 const route = useRoute();
@@ -92,5 +93,9 @@ onMounted(async () => {
                 Chatear con {{user.display_name ?? user.email}}
             </RouterLink> 
         </div>
+        <section class="flex flex-col gap-3">
+            <h3 class="text-sm font-semibold px-2 text-shadow-aero">Publicaciones</h3>
+            <PostsFeed :user-id="route.params.id" />
+        </section>
     </div>
 </template>

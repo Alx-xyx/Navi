@@ -2,6 +2,7 @@
 import { onMounted, ref, computed } from 'vue';
 import TitleH1 from '../components/TitleH1.vue';
 import { subscribeToAuthState } from '../services/auth.js';
+import PostsFeed from '../components/PostsComponents/PostsFeed.vue';
 
 //** ---------- REFERENCIAS REACTIVAS ---------- */
 const user = ref({
@@ -88,5 +89,6 @@ onMounted(() => {
                 </router-link>
             </div>
         </div>
+        <PostsFeed v-if="user.id" :user-id="user.id" />
     </div>
 </template>
