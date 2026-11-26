@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+/*^ TEMAS VARIABLES PARA EL USER */
+
+/*? Static -> Por defecto, es el celeste tipo frutiger aero tradicional */
+@theme static {
+    --color-aero-50: #e6fbff;
+    --color-aero-200: #7fe3ff;
+    --color-aero-400: #1fc8f5;
+    --color-aero-600: #0a8fc2;
+    --color-aero-900: #034a66;
+    --color-aero-text: #030912;
+    /* --shadow-glass: 0 8px 32px rgb(3 74 102 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6); */
+    --font-sans: "Helvetica", sans-serif;
+}
+
+/*? Aero-zen -> Es rosado, es tipo "Spa" */
+[data-theme="aero"] {
+    --color-aero-50: #e6fbff;
+    --color-aero-200: #7fe3ff;
+    --color-aero-400: #1fc8f5;
+    --color-aero-600: #0a8fc2;
+    --color-aero-900: #034a66;
+    --color-aero-text: #030912;
+    --color-aero-text: #ffffff;
+    /* --shadow-glass: 0 8px 32px rgb(3 74 102 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6); */
+    --font-sans: "Helvetica", sans-serif;
+}
+
+/*? Aero-zen -> Es rosado, es tipo "Spa" */
+[data-theme="aeroZen"] {
+    --color-aero-50: #fff0f7;
+    --color-aero-200: #ffb3d9;
+    --color-aero-400: #ff6fb5;
+    --color-aero-600: #c2307f;
+    --color-aero-900: #6b0f45;
+    --color-aero-text: #ffffff;
+
+    /* --shadow-glass: 0 8px 32px rgb(3 74 102 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6); */
+    --font-sans: "Helvetica", sans-serif;
+}
+
+/*? DORFic -> Es un naranja muy fuerte, es minimalista */
+[data-theme="dorfic"] {
+    --color-aero-50: #fff4e6;
+    --color-aero-200: #ffcf8a;
+    --color-aero-400: #ff9a1f;
+    --color-aero-600: #c25e00;
+    --color-aero-900: #6b3000;
+    --color-aero-text: #ffffff;
+
+    /* --shadow-glass: 0 8px 32px rgb(3 74 102 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6); */
+    --font-sans: "Helvetica", sans-serif;
+}
+
+/*? Techno-zen -> La tecnologia y la naturaleza en un solo lugar */
+[data-theme="technoZen"] {
+    --color-aero-50: #eafff0;
+    --color-aero-200: #9be8b0;
+    --color-aero-400: #3fc767;
+    --color-aero-600: #1f8a40;
+    --color-aero-900: #0b4a22;
+    --color-aero-text: #ffffff;
+
+    /* --shadow-glass: 0 8px 32px rgb(3 74 102 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6); */
+    --font-sans: "Helvetica", sans-serif;
+}
+
+/*? Dark aero -> El equivalente al Modo Oscuro basicamente */
+[data-theme="darkAero"] {
+    --color-aero-50: #3b6a9c;
+    --color-aero-200: #234a73;
+    --color-aero-400: #12304f;
+    --color-aero-600: #0a1d33;
+    --color-aero-900: #030912;
+    --color-aero-text: #ffffff;
+    /* --shadow-glass: 0 8px 32px rgb(3 74 102 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.6); */
+    --font-sans: "Helvetica", sans-serif;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url(./assets/fonts/Helvetica.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url(./assets/fonts/Helvetica-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "Helvetica";
+    src: url(./assets/fonts/helvetica-light-587ebe5a59211.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background: linear-gradient(135deg,
+            var(--color-aero-50) 0%,
+            var(--color-aero-400) 35%,
+            var(--color-aero-600) 70%,
+            var(--color-aero-900) 100%);
+    color: var(--color-aero-text);
+    min-height: 100vh;
+}
+
+@utility glass {
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.45), rgb(255 255 255 / 0.12));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.5);
+    box-shadow:
+        0 8px 32px color-mix(in srgb, var(--color-aero-900) 35%, transparent),
+        inset 0 1px 0 rgb(255 255 255 / 0.6);
+}
+
+@utility btn-aero {
+    background: linear-gradient(to bottom,
+            var(--color-aero-200) 0%,
+            var(--color-aero-400) 50%,
+            var(--color-aero-600) 51%,
+            var(--color-aero-400) 100%);
+    border: 1px solid rgb(255 255 255 / 0.6);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8),
+        0 2px 6px color-mix(in srgb, var(--color-aero-900) 40%, transparent);
+}
+
+.scroll-aero {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.6) transparent;
+}
+
+.scroll-aero::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-aero::-webkit-scrollbar-track {
+    background: rgb(255 255 255 / 0.1);
+    border-radius: 9999px;
+}
+
+.scroll-aero::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #ffffffaa, #7fe3ffaa);
+    border: 1px solid rgb(255 255 255 / 0.6);
+    border-radius: 9999px;
+}

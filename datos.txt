@@ -1,0 +1,10 @@
+Carrera: Diseño y Desarrollo Web 
+Materia: Clientes Web Mobile 
+Cuatrimestre: 4to 
+Año: 2do
+Turno: Noche A
+Comisión: A 
+Apellido y nombre: Avendaño Alvaro Manuel 
+Docente: Santiago Gallino
+Carácter de entrega: (2do parcial)
+
